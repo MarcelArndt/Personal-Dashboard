@@ -1,0 +1,28 @@
+.container{
+    background-image: url('../../../public/assets/component-quotation/background-blue.png');
+    background-repeat: no-repeat;
+    background-position: left top;
+    position: relative;
+    width: 100%;
+    background-color: #1456AD;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 0px;
+}
+
+.text-block{
+    padding: 24px;
+    width: 85%;
+    font-size: 24px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.source-block{
+    font-size: 14px;
+    position: absolute;
+    bottom: 8px;
+    right: 24px;
+}

@@ -1,1 +1,120 @@
-/* You can add global styles to this file, and also import other style files */
+
+
+@font-face {
+    font-family: 'Nunito';
+    font-weight: 100 1000;
+    src: url('./../public/fonts/Nunito-VariableFont_wght.ttf') format('truetype');
+  }
+  
+@font-face {
+    font-display: swap;
+    font-family: 'Material Symbols Outlined';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./../public/fonts/material-symbols-outlined-v213-latin-regular.woff2') format('woff2');
+  }
+
+:root{
+    --primary-bg: #202552;
+    --primary-bg-dark: #1E1E1E;
+    --secundary-bg: #FFFFFF;
+    --normal-text: #FFFFFF;
+    --text-black: #000000;
+    --text-light-black: #0c0c0c;
+    --text-gray: #686868;
+    --text-blue: #1381FF;
+    --text-red: #ED1E79;
+    --purple-1: #444DF2;
+    --purple-2: #797EF3;
+    --purple-3: #535AF1;
+    --btn-gray: #686868;
+    --dg-btn-bg: #ECEEFE;
+    --green: #92C83E;
+    --border-light-purple: #ADB0D9;
+}
+
+:root.mode{
+    --primary-bg: #ECEEFE;
+    --primary-bg-dark: #dadcea;
+    --secundary-bg: #FFFFFF;
+    --normal-text: #000000;
+    --text-black: #000000;
+    --text-light-black: #0c0c0c;
+    --text-gray: #686868;
+    --text-blue: #1381FF;
+    --text-red: #ED1E79;
+    --purple-1: #444DF2;
+    --purple-2: #797EF3;
+    --purple-3: #535AF1;
+    --btn-gray: #686868;
+    --dg-btn-bg: #ECEEFE;
+    --green: #92C83E;
+    --border-light-purple: #ADB0D9;
+}
+
+body{
+    margin: 0px 0px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-bg);
+    font-family: 'Nunito';
+    color: var(--normal-text);
+    font-size: 18px;
+    font-weight: 400;
+}
+
+h1{
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: 'Nunito';
+  color: var(--normal-text);
+}
+
+
+h4{
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  font-size: 24px;
+  font-weight: 400;
+  font-family: 'Nunito';
+  color: var(--normal-text);
+}
+
+p{
+  margin-block-start: 0px;
+  margin-block-end: 0px,
+}
+
+.button-outline{
+  width: fit-content;
+  padding: 4px 16px;
+  margin: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Nunito';
+  border-radius: 8px;
+  border: 2px solid white;
+  outline: 2px solid transparent;
+
+  icon{
+
+    margin-right: 12px;
+  }
+
+  &:hover{
+    cursor: pointer;
+    color: transparent;
+    background-color: white;
+    border-color: var(--text-black);
+    color: var(--text-black);
+    outline-color: white;
+  }
+  
+}
