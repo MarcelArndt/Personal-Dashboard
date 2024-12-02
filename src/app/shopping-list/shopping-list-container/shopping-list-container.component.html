@@ -1,0 +1,8 @@
+
+
+
+<div class="container-wrapper">
+    <nav class="editHover"><p [innerHTML]="'x ' + amount + ' Stck.'"></p><ul><li><icon (click)="addAmount()">add_circle</icon></li><li><icon (click)="minusAmount()">do_not_disturb_on</icon></li><li><icon (click)="deleteObject()">cancel</icon></li></ul></nav>
+    <p class="title" [innerHTML]="title"></p>
+    <p class="amount" [innerHTML]="amount + ' Stck.'"></p>
+</div>

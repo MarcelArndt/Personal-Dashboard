@@ -19,6 +19,15 @@ app-quotation{
     width: 100%;
 }
 
+app-shopping-list{
+    margin: 8px;
+
+    max-width: 675px;
+    width: 100%;
+
+    overflow: hidden;
+}
+
 .content-wrapper{
     flex-wrap: wrap;
     width: 75%;
@@ -28,6 +37,8 @@ app-quotation{
     align-items: center;
     padding-bottom: 30px;
 }
+
+
 
 
 

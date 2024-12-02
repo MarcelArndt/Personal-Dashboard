@@ -1,0 +1,104 @@
+.editHover{
+    display: none;
+    justify-content: space-between;
+    color: white;
+    z-index: 5;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #DB611A;
+
+    background-repeat: no-repeat;
+    background-position: left top;
+    align-items: center;
+    transform: translateY(-100px);
+    opacity: 0;
+    animation: fade-in 0.45s ease-in-out forwards;
+
+    &::before{
+        content: "";
+        width: 100%;
+        height: 8px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background: linear-gradient(180deg, rgba(81, 23, 3, 0.2) 0%, rgba(85,191,251,0) 100%);
+        
+    }
+
+    &::after{
+        content: "";
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        background-color: rgb(198, 70, 15);
+    }
+
+    ul{
+        margin-right: 16px;
+        li{
+            margin: 0px 4px;
+        }
+    }
+
+    icon{
+        font-size: 26px;
+        color: #e2e2e2;
+        &:hover{
+            color: white;
+            cursor: pointer;
+        }
+    }
+}
+
+.container-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: black;
+    position: relative;
+    overflow: hidden;
+    p{
+        display: flex;
+        padding: 24px;
+    }
+
+    .title{
+        color: black;
+        font-weight: 500;
+    }
+
+    .amount{
+        color: #696969;
+    }
+
+    &::before{
+        content: '';
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        position: absolute;
+    }
+
+    &:hover .editHover{
+        display: flex;
+    }
+
+    &:hover::before{
+        transition: all 0.25s ease-in;
+        opacity: 1;
+    }
+}
+
+
+@keyframes  fade-in {
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

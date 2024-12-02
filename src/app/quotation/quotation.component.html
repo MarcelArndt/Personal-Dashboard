@@ -1,6 +1,8 @@
 <div class="container">
-    <p class="text-block">
-        “Probleme kann man niemals mit derselben Denkweise lösen, durch die sie entstanden sind.“
-    </p>
-    <p class="source-block">— Albert Einstein</p>
+
+    <p class="text-block" *ngIf="currentJoke; else loading" [innerHTML]="currentJoke"></p>
+    <ng-template #loading>
+      <div class="animation-circle"></div>
+    </ng-template>
+
 </div>

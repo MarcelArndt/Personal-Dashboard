@@ -1,0 +1,26 @@
+<div class="main-wrapper-card">
+
+        <div class="headline"><icon>shopping_cart</icon><h1>Shopping-List</h1>
+        </div>
+
+
+        
+        <div class="content-wrapper">
+            @if(shoppingList.shoppingList){
+                @for(key of this.shoppingList.shoppingListKeys; track key){
+                    <app-shopping-list-container [id]="key" [amount]="this.shoppingList.shoppingList[key].amount" [title]="this.shoppingList.shoppingList[key].title"></app-shopping-list-container>
+                }
+
+                @for(item of fillerArray; track item){
+                    <div class="empty-slot">Empty Slot</div>
+                }
+
+            }
+        </div>
+
+        <div class="footer">
+            <div class="button-outline"><icon>shopping_cart</icon>Show More</div>
+            <div class="button-outline"><icon>forward_to_inbox</icon>Send Mail</div>
+        </div>
+
+</div>

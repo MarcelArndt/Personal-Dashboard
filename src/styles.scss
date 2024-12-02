@@ -87,6 +87,14 @@ p{
   margin-block-end: 0px,
 }
 
+ul{
+  padding-inline-start: 0px;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  display: flex;
+  list-style: none;
+}
+
 .button-outline{
   width: fit-content;
   padding: 4px 16px;
@@ -104,7 +112,7 @@ p{
   outline: 2px solid transparent;
 
   icon{
-
+    font-size: 24px;
     margin-right: 12px;
   }
 
