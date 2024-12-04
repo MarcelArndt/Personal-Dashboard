@@ -2,13 +2,26 @@
     <div class="overview-wrapper">
 
         <h4>Add a new Item</h4>
-        <p>Name your Item, which do you want to buy and add it to your list.</p>
-        <form NgForm='creatingItemForm'>
-           <input name="name" type="text" required placeholder="Name of Item" minlength="4"[(ngModel)]="name">
-            <input name="amount" type="number" required placeholder="Amount in numbers" [(ngModel)]="amount">
+        <p>Name your item, which do you want to buy and add it to your list.</p>
+        <form #creatingItemForm="ngForm" (ngSubmit)="onSubmit(creatingItemForm)">
+
+            <div class="errorBox">
+                @if(nameInput.touched && nameInput.errors?.['required']){
+                    <span>Name is required!</span>
+                } @else if (nameInput.errors?.['minlength'] && nameInput.touched) {
+                    <span>Name needs min. 3 characters!</span>
+                } @else if (creatingItemForm.value.amount <= 0 && amountInput.touched) {
+                    <span>Amount of {{creatingItemForm.value.amount}} isn't allowed!</span>
+                } @else if(creatingItemForm.value.amount > 1000 && amountInput.touched){
+                    <span>over 1000 isn't allowed!</span>
+                }
+            </div>
+
+            <input name="name" type="text" #nameInput="ngModel" required placeholder="Name of Item" minlength="3"[(ngModel)]="name">
+            <input name="amount" type="number" #amountInput="ngModel" required placeholder="Amount in numbers" [(ngModel)]="amount">
             <div class="flow-row">
-                <div class="button-outline"><icon>arrow_back</icon>Back</div>
-                <button [disabled] class="button-full"><icon>add</icon>Add Item</button>
+                <div (click)="closeWindows()" class="button-outline"><icon>arrow_back</icon>Back</div>
+                <button [disabled]="creatingItemForm.invalid || creatingItemForm.value.amount <= 0 || creatingItemForm.value.amount > 1000" class="button-full"><icon>add</icon>Add Item</button>
             </div>
         </form>
 

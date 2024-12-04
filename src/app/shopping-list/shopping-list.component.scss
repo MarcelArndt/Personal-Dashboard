@@ -50,13 +50,13 @@ background-color: #dedede;
     opacity: 0;
 }
 
-.content-wrapper app-shopping-list-container:nth-child(even){
+.content-wrapper app-shopping-list-container:nth-child(even), .content-wrapper app-list-container-edit:nth-child(even){
     display: block;
     width: 100%;
     background-color: white;
 }
 
-.content-wrapper app-shopping-list-container:nth-child(odd){
+.content-wrapper app-shopping-list-container:nth-child(odd), .content-wrapper app-list-container-edit:nth-child(odd){
     display: block;
     width: 100%;
     background-color: #EFEFEF;

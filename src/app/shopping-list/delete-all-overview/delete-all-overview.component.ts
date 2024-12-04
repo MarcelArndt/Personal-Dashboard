@@ -20,4 +20,5 @@ export class DeleteAllOverviewComponent {
   closeWindows(){
     this.shoppingList.switchModus('overview')
   }
+
 }

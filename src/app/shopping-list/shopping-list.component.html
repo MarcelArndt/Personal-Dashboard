@@ -1,11 +1,8 @@
 <div class="main-wrapper-card">
             <app-shoppinglist-menu></app-shoppinglist-menu>
-        <div class="headline"><icon>shopping_cart</icon><h1>Shopping-List</h1>
-
-        </div>
+        <div class="headline"><icon>shopping_cart</icon><h1>Shopping-List</h1></div>
 
         <div class="content-wrapper">
-
             @switch (shoppingList.modus){
                 @case('deleteAll'){
                     <app-delete-all-overview></app-delete-all-overview>
@@ -13,19 +10,26 @@
                 @case('addItem'){
                     <app-add-new-item></app-add-new-item>
                 }
+                @case('changeData'){
+                    <app-change-person-deatils></app-change-person-deatils>
+                }
+                @case('noItemInList'){
+                    <app-no-items></app-no-items>
+                }
             }
 
-
-            @if(shoppingList.shoppingList){
-                @for(key of this.shoppingList.shoppingListKeys; track key){
+            @for(key of this.shoppingList.shoppingListKeys; track key){
+                @if(!this.shoppingList.shoppingList[key].isEdit){
                     <app-shopping-list-container [id]="key" [amount]="this.shoppingList.shoppingList[key].amount" [title]="this.shoppingList.shoppingList[key].title"></app-shopping-list-container>
+                } @else if(this.shoppingList.shoppingList[key].isEdit){
+                    <app-list-container-edit [id]="key" [amount]="this.shoppingList.shoppingList[key].amount" [name]="this.shoppingList.shoppingList[key].title"></app-list-container-edit>
                 }
-
-                @for(item of fillerArray; track item){
-                    <div class="empty-slot">Empty Slot</div>
-                }
-
             }
+
+            @for(item of fillerArray; track item){
+                <div class="empty-slot">Empty Slot</div>
+            }
+
         </div>
 
         <div class="footer">

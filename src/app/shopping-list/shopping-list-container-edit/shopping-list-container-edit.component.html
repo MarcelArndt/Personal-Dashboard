@@ -1,0 +1,23 @@
+<div class="container-wrapper">
+    <form #editForm="ngForm"  (ngSubmit)="onSubmit(editForm)">
+        <div class="errorBox">
+            @if(nameInput.touched && nameInput.errors?.['required']){
+                <span>Name is required!</span>
+            } @else if (nameInput.errors?.['minlength'] && nameInput.touched) {
+                <span>Name needs min. 3 characters!</span>
+            } @else if (editForm.value.amount <= 0) {
+                <span>Amount of {{editForm.value.amount}} isn't allowed!</span>
+            } @else if(editForm.value.amount > 1000){
+                <span>over 1000 isn't allowed!</span>
+            } @else if(editForm.valid){
+                <p>Edit your item here.</p>
+            }
+        </div>
+        <input name="name" [value]="name" type="text" #nameInput="ngModel" required placeholder="Name of Item" minlength="3"[(ngModel)]="name">
+        <input name="amount" [value]="amount" type="number" #amountInput="ngModel" required placeholder="Amount in numbers" [(ngModel)]="amount">
+        <div class="flow-row">
+            <div class="button-outline" (click)="deleteItem()"><icon>delete</icon>Delete</div>
+            <button  [disabled]="editForm.invalid || editForm.value.amount <= 0 || editForm.value.amount > 1000" class="button-full"><icon>check</icon>Save</button>
+        </div>
+    </form>
+</div>

@@ -5,13 +5,16 @@ import { ShoppinglistService } from './service/shoppinglist.service';
 import { ShoppinglistMenuComponent } from './shoppinglist-menu/shoppinglist-menu.component';
 import { DeleteAllOverviewComponent } from './delete-all-overview/delete-all-overview.component';
 import { AddNewItemComponent } from './add-new-item/add-new-item.component';
+import { ShoppingListContainerEditComponent } from './shopping-list-container-edit/shopping-list-container-edit.component';
+import { NoItemsComponent } from './no-items/no-items.component';
+import { ChangePersonDeatilsComponent } from './change-person-deatils/change-person-deatils.component';
 
 
 
 @Component({
   selector: 'app-shopping-list',
   standalone: true,
-  imports: [IconComponent, ShoppingListContainerComponent, ShoppinglistMenuComponent, DeleteAllOverviewComponent, AddNewItemComponent, ],
+  imports: [IconComponent, ShoppingListContainerComponent, ShoppinglistMenuComponent, DeleteAllOverviewComponent, AddNewItemComponent, ShoppingListContainerEditComponent, NoItemsComponent, ChangePersonDeatilsComponent],
   templateUrl: './shopping-list.component.html',
   styleUrls: ['./shopping-list.component.scss', './shopping-list.component.scss']
 })

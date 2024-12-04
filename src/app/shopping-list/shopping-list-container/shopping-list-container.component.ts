@@ -37,6 +37,10 @@ export class ShoppingListContainerComponent {
     return 0;
   }
 
+  editObject(){
+    if(this.id && this.shoppingList.shoppingList[this.id]) this.shoppingList.shoppingList[this.id].isEdit = true;
+  }
+
 }
 
 
