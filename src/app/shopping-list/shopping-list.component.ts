@@ -2,15 +2,18 @@ import { Component } from '@angular/core';
 import { IconComponent } from '../share/icon/icon.component';
 import { ShoppingListContainerComponent } from './shopping-list-container/shopping-list-container.component';
 import { ShoppinglistService } from './service/shoppinglist.service';
+import { ShoppinglistMenuComponent } from './shoppinglist-menu/shoppinglist-menu.component';
+import { DeleteAllOverviewComponent } from './delete-all-overview/delete-all-overview.component';
+import { AddNewItemComponent } from './add-new-item/add-new-item.component';
 
 
 
 @Component({
   selector: 'app-shopping-list',
   standalone: true,
-  imports: [IconComponent, ShoppingListContainerComponent],
+  imports: [IconComponent, ShoppingListContainerComponent, ShoppinglistMenuComponent, DeleteAllOverviewComponent, AddNewItemComponent, ],
   templateUrl: './shopping-list.component.html',
-  styleUrl: './shopping-list.component.scss'
+  styleUrls: ['./shopping-list.component.scss', './shopping-list.component.scss']
 })
 export class ShoppingListComponent {
   constructor( public shoppingList: ShoppinglistService){};

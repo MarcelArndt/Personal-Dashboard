@@ -1,0 +1,23 @@
+<div class="overview">
+    <div class="overview-wrapper">
+
+       @if(shoppingList.shoppingListKeys.length > 0){
+        <icon class="BigIcon">delete</icon>
+        <h4>Are You Sure?</h4>
+        <p>Do you really want to delete all items in your current list?</p>
+        <div class="flow-row">
+            <div (click)="accept()" class="button-full"><icon>check</icon>Yes</div>
+            <div (click)="closeWindows()" class="button-full"><icon>block</icon> No</div>
+        </div>
+       } @else {
+        <icon class="BigIcon">warning</icon>
+        <h4>There is no Item!</h4>
+        <p>You have to add a item to your list, if you want to call this action.</p>
+        <div class="flow-row">
+            <div (click)="closeWindows()" class="button-outline"><icon>arrow_back</icon>Back</div>
+            <div (click)="accept()" class="button-full"><icon>add</icon>Add Item</div>
+        </div>
+       }
+       
+    </div>
+</div>

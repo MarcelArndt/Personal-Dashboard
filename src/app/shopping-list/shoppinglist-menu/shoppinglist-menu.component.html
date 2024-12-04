@@ -1,0 +1,19 @@
+
+<div class="menu-wrapper">
+    <icon (click)="toggleMenu()" id="shopping-list-menu" class="main-menu-icon">menu</icon>
+    <div class="menu-container">
+        <div class="animation-frame" [ngClass]="isShowMenu ? 'animation-open' : 'animation-close'">
+            <nav class="menu-nav">
+                <ul>
+                    <li (click)="shoppingList.switchModus('addItem'); toggleMenu()"><icon>add</icon>Add Item</li>
+                    <li (click)="shoppingList.switchModus('addItem'); toggleMenu()"><icon>edit</icon>Edit List</li>
+                    <li (click)="shoppingList.switchModus('deleteAll'); toggleMenu()"><icon>list_alt</icon>Empty List</li>
+                    <li (click)="shoppingList.switchModus('deleteAll'); toggleMenu()"><icon>forward_to_inbox</icon>Send To Mail</li>
+                    <li (click)="shoppingList.switchModus('deleteAll'); toggleMenu()"><icon>person</icon>Change Receiver</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+

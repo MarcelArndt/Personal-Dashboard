@@ -1,0 +1,21 @@
+@import './../overview-layer.scss';
+.button-full{
+    color: #ffffff;
+    background-color: #DB611A;
+
+    &:hover{
+        color: #DB611A;
+        border-color: #DB611A;
+    }
+}
+
+.button-outline{
+    background-color: #ffffff;
+    color: #242424;
+    border-color: #242424;
+    &:hover{
+        background-color: #242424 !important;
+        color: #ffffff;
+        border-color: #242424;
+    }
+}

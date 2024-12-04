@@ -7,8 +7,8 @@ import { ShoppingList, ShoppingItem } from '../interface/types';
 })
 export class ShoppinglistService {
 
-  constructor() { }
-
+  constructor() {}
+  modus:string = 'overview';
   shoppingList: ShoppingList = {};
 
   genIndex():string{
@@ -22,6 +22,14 @@ export class ShoppinglistService {
     return id;
   }
 
+  deleteList(){
+    this.shoppingList = {};
+  }
+
+  switchModus(newModus:string = 'overview'){
+    this.modus = newModus;
+  }
+
   generateTestObj(){
     let id = this.genIndex();
     let titleExapmle = ['Bananen','Erdbeeren','Toieltenpapier','Gemischtes Hack','Paprika'];
@@ -31,8 +39,8 @@ export class ShoppinglistService {
     this.shoppingList[id] = {title, amount};
   }
 
- init(){
-    for(let i = 0; i < 3; i++){
+ init(amountOfItems:number = 3){
+    for(let i = 0; i < amountOfItems; i++){
       this.generateTestObj();
     }
   }

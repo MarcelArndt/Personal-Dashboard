@@ -95,7 +95,38 @@ ul{
   list-style: none;
 }
 
+.button-full{
+  min-width: 60px;
+  width: fit-content;
+  padding: 4px 16px;
+  margin: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Nunito';
+  border-radius: 8px;
+  border: 2px solid transparent;
+
+  icon{
+    font-size: 24px;
+    margin-right: 12px;
+  }
+
+  &:hover{
+    cursor: pointer;
+    color: transparent;
+    background-color: white !important;
+    color: var(--text-black);
+  }
+}
+
 .button-outline{
+  min-width: 60px;
   width: fit-content;
   padding: 4px 16px;
   margin: 8px;
@@ -110,7 +141,6 @@ ul{
   border-radius: 8px;
   border: 2px solid white;
   outline: 2px solid transparent;
-
   icon{
     font-size: 24px;
     margin-right: 12px;

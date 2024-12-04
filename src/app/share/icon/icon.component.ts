@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input} from '@angular/core';
 
 @Component({
   selector: 'icon',
@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './icon.component.scss'
 })
 export class IconComponent {
+
+@Input() id:string = '';
 
 }

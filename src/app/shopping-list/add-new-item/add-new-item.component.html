@@ -1,0 +1,16 @@
+<div class="overview">
+    <div class="overview-wrapper">
+
+        <h4>Add a new Item</h4>
+        <p>Name your Item, which do you want to buy and add it to your list.</p>
+        <form NgForm='creatingItemForm'>
+           <input name="name" type="text" required placeholder="Name of Item" minlength="4"[(ngModel)]="name">
+            <input name="amount" type="number" required placeholder="Amount in numbers" [(ngModel)]="amount">
+            <div class="flow-row">
+                <div class="button-outline"><icon>arrow_back</icon>Back</div>
+                <button [disabled] class="button-full"><icon>add</icon>Add Item</button>
+            </div>
+        </form>
+
+    </div>
+ </div>

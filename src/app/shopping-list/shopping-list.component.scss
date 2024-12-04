@@ -1,5 +1,4 @@
 .main-wrapper-card{
-
     background-image: url('../../../public/assets/component-shopping-list/background-yellow.png');
     background-repeat: no-repeat;
     background-position: left top;
@@ -24,26 +23,48 @@
 
 app-shopping-list-container{
     width: 100%;
-    background-color: aqua;
+}
+
+app-shoppinglist-menu{
+position: absolute;
+width: 100%;
+background-color: #dedede;
+}
+
+.content-wrapper{
+    position: relative;
+    width: 100%;
+    max-height: 370px;
+    overflow-y: scroll;
+}
+
+.content-wrapper::-webkit-scrollbar-thumb{
+    background-color:#DB611A;
+    border-radius: 8px;
+
+}
+
+.content-wrapper::-webkit-scrollbar{
+    width: 10px;
+    background-color: white;
+    opacity: 0;
 }
 
 .content-wrapper app-shopping-list-container:nth-child(even){
     display: block;
     width: 100%;
     background-color: white;
-
 }
 
 .content-wrapper app-shopping-list-container:nth-child(odd){
     display: block;
     width: 100%;
     background-color: #EFEFEF;
-
 }
 
 
 .container-wrapper{
-    overflow-y: scroll;
+    overflow-y: auto;
     display: flex;
     justify-content: space-between;
 
@@ -70,9 +91,7 @@ app-shopping-list-container{
 
 
 .button-outline{
-
     icon{
-
         font-size: 20px;
         margin-right: 8px;
     }
@@ -91,7 +110,7 @@ app-shopping-list-container{
     align-items: center;
     vertical-align: middle;
     text-align: center;
-    padding: 24px;
+    padding: 23px;
     background-color: #e8e8e8;
     color: #949494;
     border: 1px dashed #dedede;;
