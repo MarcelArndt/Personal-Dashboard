@@ -7,8 +7,8 @@
                 <ul>
                     <li (click)="shoppingList.switchModus('addItem'); toggleMenu()"><icon>add</icon>Add Item</li>
                     <li (click)="shoppingList.switchModus('deleteAll', true); toggleMenu()"><icon>delete</icon>Empty List</li>
-                    <li (click)="shoppingList.sendWhatsApp(); toggleMenu(); shoppingList.switchModus('overview',true)"><icon>forward_to_inbox</icon>Send To Mail</li>
-                    <li (click)="shoppingList.sendWhatsApp(); toggleMenu(); shoppingList.switchModus('overview',true)"><icon>sms</icon>WhatsApp-WebApp</li>
+                    <li (click)="checkBeforSend('email'); toggleMenu()"><icon>forward_to_inbox</icon>Send To Mail</li>
+                    <li (click)="checkBeforSend('whatsApp'); toggleMenu()"><icon>sms</icon>WhatsApp-WebApp</li>
                     <li (click)="shoppingList.switchModus('changeData'); toggleMenu()"><icon>person</icon>Change Receiver</li>
                 </ul>
             </nav>

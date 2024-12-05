@@ -8,13 +8,14 @@ import { AddNewItemComponent } from './add-new-item/add-new-item.component';
 import { ShoppingListContainerEditComponent } from './shopping-list-container-edit/shopping-list-container-edit.component';
 import { NoItemsComponent } from './no-items/no-items.component';
 import { ChangePersonDeatilsComponent } from './change-person-deatils/change-person-deatils.component';
+import { InfoPanelComponent } from './info-panel/info-panel.component';
 
 
 
 @Component({
   selector: 'app-shopping-list',
   standalone: true,
-  imports: [IconComponent, ShoppingListContainerComponent, ShoppinglistMenuComponent, DeleteAllOverviewComponent, AddNewItemComponent, ShoppingListContainerEditComponent, NoItemsComponent, ChangePersonDeatilsComponent],
+  imports: [IconComponent, ShoppingListContainerComponent, InfoPanelComponent, ShoppinglistMenuComponent, DeleteAllOverviewComponent, AddNewItemComponent, ShoppingListContainerEditComponent, NoItemsComponent, ChangePersonDeatilsComponent],
   templateUrl: './shopping-list.component.html',
   styleUrls: ['./shopping-list.component.scss', './shopping-list.component.scss']
 })

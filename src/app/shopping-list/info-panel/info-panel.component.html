@@ -1,0 +1,19 @@
+<div class="overview">
+    <div class="overview-wrapper">
+
+        <icon class="BigIcon">{{this.infoService.icon}}</icon>
+        <h4 [innerHTML]="this.infoService.headline"></h4>
+        <p [innerHTML]="this.infoService.message"></p>
+        <div class="flow-row">
+            <div (click)="closeWindows()" class="button-outline"><icon>arrow_back</icon>Back</div>
+
+            @if(this.infoService.servingButtonTo){
+                <div (click)="shoppingList.switchModus(this.infoService.servingButtonTo)" class="button-full">
+                    <icon>{{this.infoService.buttonIcon}}</icon>
+                    {{this.infoService.buttonMessage}}
+                </div>
+            }
+
+        </div>
+    </div>
+</div>

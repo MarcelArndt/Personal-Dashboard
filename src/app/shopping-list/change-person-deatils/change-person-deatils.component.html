@@ -19,8 +19,8 @@
                     <span>no valid Email</span>
                 }
             </div>
-            <input name="phonenumber" type="text" #phoneNumberInput="ngModel" required placeholder="Phonenumber" minlength="8"[(ngModel)]="phoneNumber" pattern="[\d+]+">
-            <input name="email" type="email" #emailInput="ngModel" required placeholder="E-Mail" [(ngModel)]="email" minlength="6" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+            <input name="phoneNumber" type="text" #phoneNumberInput="ngModel" required [placeholder]="phoneNumberForUserView" minlength="8"[(ngModel)]="phoneNumber" pattern="[\d+ ]+">
+            <input name="email" type="email" #emailInput="ngModel" required [placeholder]="emailForUserView" [(ngModel)]="email" minlength="6" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
             <div class="flow-row">
                 <div (click)="closeWindows()" class="button-outline"><icon>arrow_back</icon>Back</div>
                 <button [disabled]="changePersonDataForm.invalid" class="button-full"><icon>check</icon>Save</button>

@@ -16,6 +16,9 @@
                 @case('noItemInList'){
                     <app-no-items></app-no-items>
                 }
+                @case('infoPanel'){
+                    <app-info-panel></app-info-panel>
+                }
             }
 
             @for(key of this.shoppingList.shoppingListKeys; track key){
@@ -33,7 +36,6 @@
         </div>
 
         <div class="footer">
-            <div class="button-outline"><icon>shopping_cart</icon>Show More</div>
             <div class="button-outline"><icon>forward_to_inbox</icon>Send Mail</div>
         </div>
 

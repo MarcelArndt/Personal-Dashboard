@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ShoppingList, ShoppingItem } from '../interface/types';
+import { ShoppingList} from '../interface/types';
+import { InfoPanelService } from './info-panel.service';
 
 
 @Injectable({
@@ -7,12 +8,12 @@ import { ShoppingList, ShoppingItem } from '../interface/types';
 })
 export class ShoppinglistService {
 
-  constructor() {}
+  constructor(public infoService: InfoPanelService) {}
   modus:string = 'overview';
   shoppingList: ShoppingList = {};
   listAsMessage:string = '';
-  phoneNumber:string = '49017663626861'
-  email:string = 'arndt-marcel@info.de'
+  phoneNumber:string = ''
+  email:string = ''
   emptyList = true;
 
   get shoppingListKeys(): string[] {
@@ -54,7 +55,7 @@ export class ShoppinglistService {
     this.checkForListLenght();
   }
 
- init(amountOfItems:number = 3){
+ init(amountOfItems:number = 0){
       for(let i = 0; i < amountOfItems; i++){
         this.generateNewObjOfItem();
       }
