@@ -3,6 +3,8 @@ import { IconComponent } from '../../share/icon/icon.component';
 import { ShoppinglistService } from '../service/shoppinglist.service';
 import { FormsModule, NgModel, NgForm } from '@angular/forms';
 import { InfoPanelService } from '../service/info-panel.service';
+import { NavRoutersService } from '../service/nav-routers.service';
+import { ContactService } from '../service/contact.service';
 
 @Component({
   selector: 'app-change-person-deatils',
@@ -12,7 +14,7 @@ import { InfoPanelService } from '../service/info-panel.service';
   styleUrl: './change-person-deatils.component.scss'
 })
 export class ChangePersonDeatilsComponent {
-  constructor(public shoppingList:ShoppinglistService, public infoPanel:InfoPanelService ){}
+  constructor(public shoppingList:ShoppinglistService, public infoPanel:InfoPanelService, public router: NavRoutersService, public contact: ContactService){}
 
   email:string = ''
   phoneNumber:string = ''
@@ -20,18 +22,18 @@ export class ChangePersonDeatilsComponent {
   emailForUserView = 'max@muster.com'
 
   ngOnInit(){
-    this.emailForUserView = this.shoppingList.email? this.shoppingList.email : 'max@muster.com';
-    this.phoneNumberForUserView = this.shoppingList.phoneNumber? this.phoneNumberForUserView = this.translateBackwards(this.shoppingList.phoneNumber) : '+49 0176 12345678';
+    this.emailForUserView = this.contact.email? this.contact.email : 'max@muster.com';
+    this.phoneNumberForUserView = this.contact.phoneNumber? this.phoneNumberForUserView = this.translateBackwards(this.contact.phoneNumber) : '+49 0176 12345678';
   }
 
   closeWindows(){
-    this.shoppingList.switchModus('overview')
+    this.router.switchModus('overview')
   }
 
   onSubmit(form:NgForm){
     if(form.valid && form.touched){
-      this.shoppingList.phoneNumber = this.getPhoneNumberinFormat(form.value.phoneNumber, true);
-      this.shoppingList.email = form.value.email;
+      this.contact.phoneNumber = this.getPhoneNumberinFormat(form.value.phoneNumber, true);
+      this.contact.email = form.value.email;
       this.throwSuccess();
     }
   }
@@ -43,7 +45,7 @@ export class ChangePersonDeatilsComponent {
     this.infoPanel.servingButtonTo = '';
     this.infoPanel.buttonIcon='';
     this.infoPanel.buttonMessage=''
-    this.shoppingList.switchModus('infoPanel');
+    this.router.switchModus('infoPanel');
   }
 
   // will chage the current format of a PhoneNumber for fitting Server (translateFowards) or UserView (translateBackwards).

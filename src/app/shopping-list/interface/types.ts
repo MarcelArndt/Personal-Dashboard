@@ -7,3 +7,8 @@ export interface ShoppingItem {
 export interface ShoppingList {
     [id: string]: ShoppingItem;
   }
+
+
+export interface ActionsObj {
+  [key: string]: () => void;
+  }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IconComponent } from '../../share/icon/icon.component';
 import { ShoppinglistService } from '../service/shoppinglist.service';
+import { NavRoutersService } from '../service/nav-routers.service';
 
 @Component({
   selector: 'app-delete-all-overview',
@@ -10,15 +11,15 @@ import { ShoppinglistService } from '../service/shoppinglist.service';
   styleUrl: './delete-all-overview.component.scss'
 })
 export class DeleteAllOverviewComponent {
-  constructor(public shoppingList: ShoppinglistService){}
+  constructor(public shoppingList: ShoppinglistService, public router: NavRoutersService ){}
 
   accept(){
     this.shoppingList.deleteList();
-    this.shoppingList.switchModus('overview')
+    this.router.switchModus('overview')
   }
 
   closeWindows(){
-    this.shoppingList.switchModus('overview')
+    this.router.switchModus('overview')
   }
 
 }

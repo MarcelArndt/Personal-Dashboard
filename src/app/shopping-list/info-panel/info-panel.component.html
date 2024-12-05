@@ -8,7 +8,7 @@
             <div (click)="closeWindows()" class="button-outline"><icon>arrow_back</icon>Back</div>
 
             @if(this.infoService.servingButtonTo){
-                <div (click)="shoppingList.switchModus(this.infoService.servingButtonTo)" class="button-full">
+                <div (click)="router.switchModus(this.infoService.servingButtonTo)" class="button-full">
                     <icon>{{this.infoService.buttonIcon}}</icon>
                     {{this.infoService.buttonMessage}}
                 </div>

@@ -9,6 +9,7 @@ import { ShoppingListContainerEditComponent } from './shopping-list-container-ed
 import { NoItemsComponent } from './no-items/no-items.component';
 import { ChangePersonDeatilsComponent } from './change-person-deatils/change-person-deatils.component';
 import { InfoPanelComponent } from './info-panel/info-panel.component';
+import { NavRoutersService } from './service/nav-routers.service';
 
 
 
@@ -20,7 +21,7 @@ import { InfoPanelComponent } from './info-panel/info-panel.component';
   styleUrls: ['./shopping-list.component.scss', './shopping-list.component.scss']
 })
 export class ShoppingListComponent {
-  constructor( public shoppingList: ShoppinglistService){};
+  constructor( public shoppingList: ShoppinglistService, public router:  NavRoutersService){};
 
   ngOnInit(){
     this.shoppingList.init();

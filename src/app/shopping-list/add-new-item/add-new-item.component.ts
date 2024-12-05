@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IconComponent } from '../../share/icon/icon.component';
 import { ShoppinglistService } from '../service/shoppinglist.service';
 import { FormsModule, NgForm } from '@angular/forms'
+import { NavRoutersService } from '../service/nav-routers.service';
 
 @Component({
   selector: 'app-add-new-item',
@@ -12,13 +13,13 @@ import { FormsModule, NgForm } from '@angular/forms'
   styleUrl: './add-new-item.component.scss'
 })
 export class AddNewItemComponent {
-  constructor(public shoppingList: ShoppinglistService){}
+  constructor(public shoppingList: ShoppinglistService, public router:  NavRoutersService){}
   name:string = '';
   amount:number = 0;
 
 
   closeWindows(){
-    this.shoppingList.switchModus('overview')
+    this.router.switchModus('overview')
   }
 
   onSubmit(form:NgForm){

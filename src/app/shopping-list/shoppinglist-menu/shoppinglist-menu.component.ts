@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 import { IconComponent } from '../../share/icon/icon.component';
 import { ShoppinglistService } from '../service/shoppinglist.service';
 import { InfoPanelService } from '../service/info-panel.service';
+import { NavRoutersService } from '../service/nav-routers.service';
+import { ActionsObj } from '../interface/types';
+import { ContactService } from '../service/contact.service';
+
 
 @Component({
   selector: 'app-shoppinglist-menu',
@@ -12,9 +16,15 @@ import { InfoPanelService } from '../service/info-panel.service';
   styleUrl: './shoppinglist-menu.component.scss'
 })
 export class ShoppinglistMenuComponent {
-constructor(public shoppingList : ShoppinglistService, public infoPanel:InfoPanelService){}
+constructor(public shoppingList : ShoppinglistService, public infoPanel:InfoPanelService , public router: NavRoutersService, public contact: ContactService){}
 targetMenuIconId:string = '#shopping-list-menu'
 isShowMenu:boolean = false;
+
+actionsObj: ActionsObj  = {
+  whatsApp: () => this.navToWhatsApp(),
+  email: () => this.navtoEmail(),
+  delteItems: () => this.deleteAllItems(),
+}
 
 private clickListener!: (event: MouseEvent) => void
 toggleMenu(){
@@ -46,7 +56,7 @@ throwError(name:string){
   this.infoPanel.servingButtonTo = 'changeData';
   this.infoPanel.buttonIcon='person';
   this.infoPanel.buttonMessage='Set Data'
-  this.shoppingList.switchModus('infoPanel');
+  this.router.switchModus('infoPanel');
 }
 
 throwSuccess(name:string){
@@ -56,34 +66,46 @@ throwSuccess(name:string){
   this.infoPanel.servingButtonTo = '';
   this.infoPanel.buttonIcon='';
   this.infoPanel.buttonMessage=''
-  this.shoppingList.switchModus('infoPanel');
+  this.router.switchModus('infoPanel');
 }
 
 checkBeforSend(kindOfContact:string = 'whatsApp'){
+  const action = this.actionsObj[kindOfContact];
 
-if(this.shoppingList.checkForListLenght()){
-      switch(kindOfContact){
-        case 'whatsApp':  
-          if(this.shoppingList.phoneNumber.length == 0){
-            this.throwError('Phonenumber');
-          }else {
-            this.shoppingList.sendWhatsApp();
-            this.throwSuccess('WhatsApp')
-          }; 
-          break;
-        case 'email': 
-          if(this.shoppingList.email.length > 0){
-            console.log("sending E-Mail");
-            this.throwSuccess('E-Mail');
-          }else {
-            this.throwError('E-Mail');
-          }; 
-          break;
-        default: break;
+  if(!this.shoppingList.checkForListLenght()){
+    this.router.switchModus('noItemInList');
+    return;
+  }
+
+  if (action) {
+    action();
+  } else {
+     console.warn(`No action found for ${kindOfContact}`);
+     return;
+  }
+
+  } 
+
+  navToWhatsApp(){
+    if (this.contact.phoneNumber.length === 0) {
+        this.throwError('Phonenumber');      
+      } else { 
+        this.contact.sendWhatsApp();
+        this.throwSuccess('WhatsApp') 
       }
-    } else {
-      this.shoppingList.switchModus('noItemInList');
+  }
+
+  navtoEmail(){
+    if (this.contact.email.length === 0) {
+      this.throwError('E-Mail');      
+    } else { 
+      this.contact.sendEmail();
+      this.throwSuccess('E-Mail') 
     }
+  }
+  
+  deleteAllItems(){
+    this.router.switchModus('deleteAll')
   }
 
 }

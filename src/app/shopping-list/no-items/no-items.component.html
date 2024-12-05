@@ -2,10 +2,10 @@
     <div class="overview-wrapper">
         <icon class="BigIcon">warning</icon>
         <h4>There is no Item!</h4>
-        <p>You have to add a item to your list, if you want to call this action.</p>
+        <p>You have to add an item to your list, if you want to call this action.</p>
         <div class="flow-row">
             <div (click)="closeWindows()" class="button-outline"><icon>arrow_back</icon>Back</div>
-            <div (click)="shoppingList.switchModus('addItem')" class="button-full"><icon>add</icon>Add Item</div>
+            <div (click)="router.switchModus('addItem')" class="button-full"><icon>add</icon>Add Item</div>
         </div>
     </div>
 </div>
