@@ -1,22 +1,22 @@
 .main-wrapper-card{
+    color: white;
     background-image: url('../../../public/assets/component-shopping-list/background-yellow.png');
     background-repeat: no-repeat;
     background-position: left top;
     background-color: #DB611A;
     border-radius: 12px;
-    max-width: 325px;
     position: relative;
 }
 
 .headline{
+    height: 80px;
     padding-top: 12px;
     margin-left: 12px;
     display: flex;
     justify-content: start;
     align-items: center;
-
     icon{
-    font-size: 44px;
+    font-size: 38px;
     margin: 8px 8px;
     }
 }
@@ -62,7 +62,6 @@ background-color: #dedede;
     background-color: #EFEFEF;
 }
 
-
 .container-wrapper{
     overflow-y: auto;
     display: flex;
@@ -74,7 +73,7 @@ background-color: #dedede;
 }
 
 .footer{
-    height: 60px;
+    height: 80px;
     align-items: center;
     display: flex;
     justify-content: space-around;
@@ -89,19 +88,12 @@ background-color: #dedede;
     background-color: rgb(209, 70, 39);
 }
 
-
 .button-outline{
-    icon{
-        font-size: 20px;
-        margin-right: 8px;
-    }
-
     &:hover{
         border-color: #DB611A;
         color: #DB611A;
     }
 }
-
 
 .empty-slot{
     display: flex;

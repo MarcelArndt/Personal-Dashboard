@@ -1,0 +1,47 @@
+.main-wrapper-daytime{
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    color: white;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2{
+    font-size: 36px;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+
+    vertical-align: middle;
+}
+
+.content-wrapper-daytime{
+    display: flex;
+    color: #202552;
+    width: 100%;
+    height: 90%;
+    margin: 0px 16px;
+    gap: 5%;
+}
+
+.big-icon{
+    max-width: 100px;
+    width: 100%;
+    font-size: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-box{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    vertical-align: middle;
+    align-self: center;
+    align-items: center;
+}

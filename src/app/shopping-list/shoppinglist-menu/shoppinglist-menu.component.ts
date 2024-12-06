@@ -7,7 +7,6 @@ import { NavRoutersService } from '../service/nav-routers.service';
 import { ActionsObj } from '../interface/types';
 import { ContactService } from '../service/contact.service';
 
-
 @Component({
   selector: 'app-shoppinglist-menu',
   standalone: true,
@@ -72,17 +71,16 @@ throwSuccess(name:string){
 checkBeforSend(kindOfContact:string = 'whatsApp'){
   const action = this.actionsObj[kindOfContact];
 
-  if(!this.shoppingList.checkForListLenght()){
-    this.router.switchModus('noItemInList');
-    return;
-  }
+    if(!this.shoppingList.checkForListLenght()){
+      this.router.switchModus('noItemInList');
+      return;
+    }
 
-  if (action) {
-    action();
-  } else {
-     console.warn(`No action found for ${kindOfContact}`);
-     return;
-  }
+    if (action) {
+      action();
+    } else {
+      return;
+    }
 
   } 
 

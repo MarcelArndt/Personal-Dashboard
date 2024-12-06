@@ -6,28 +6,6 @@
     align-items: center;
 }
 
-app-birthsday{
-    margin: 8px;
-    max-width: 325px;
-    width: 100%;
-    max-height: 300px;
-}
-
-app-quotation{
-    margin: 8px;
-    max-width: 675px;
-    width: 100%;
-}
-
-app-shopping-list{
-    margin: 8px;
-
-    max-width: 675px;
-    width: 100%;
-
-    overflow: hidden;
-}
-
 .content-wrapper{
     flex-wrap: wrap;
     width: 75%;
@@ -38,7 +16,62 @@ app-shopping-list{
     padding-bottom: 30px;
 }
 
+.grid-container {
+    color: #fff;
+    width: 75%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 4 Spalten */
+    grid-template-rows: auto; /* Dynamische Höhen */
+    gap: 16px; /* Abstand zwischen den Elementen */
+    color: black;
+  }
 
+  .grid-item {
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 24px;
+  }
+
+  .item1 {
+    grid-column: span 4; /* Zitat über gesamte Breite */
+  }
+  
+  .item2 {
+    grid-column: span 2; /* Einkaufsliste über 2 Spalten */
+    grid-row: span 2; /* Doppelte Höhe */
+  }
+  
+  .item3 {
+    grid-column: span 2;
+    grid-row: span 4;
+  }
+  
+  .item4 {
+    grid-column: span 1;
+  }
+  
+  .item5 {
+    grid-column: span 1;
+  }
+  
+  .item6 {
+    grid-column: span 2;
+  }
+
+  .item7 {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .item8 {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+
+  .item9 {
+    grid-column: span 3;
+    grid-row: span 2;
+  }
 
 
 
