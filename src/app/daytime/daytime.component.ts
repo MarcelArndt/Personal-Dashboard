@@ -29,6 +29,7 @@ export class DaytimeComponent {
     this.checkDayTime();
     this.choseCorrectItem();
     this.getTime();
+
   }
 
   checkDayTime(){
@@ -43,11 +44,10 @@ export class DaytimeComponent {
   }
 
   choseCorrectItem(){
-    if(this.dayTimeCounter){
-      this.chosenData[0] = this.dayTimeObj[this.dayTimeCounter].title;
-      this.chosenData[1] = this.dayTimeObj[this.dayTimeCounter].icon;
+      console.log(this.dayTimeObj[this.dayTimeCounter!].title);
+      this.chosenData[0] = this.dayTimeObj[this.dayTimeCounter!].title;
+      this.chosenData[1] = this.dayTimeObj[this.dayTimeCounter!].icon;
       this.chosenData[2] = this.dayName[this.currentTime!.getDay()];
-    }
   }
 
   getTime(){
