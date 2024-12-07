@@ -46,7 +46,7 @@ export class QuotationComponent {
         response = await fetch('https://official-joke-api.appspot.com/random_joke');
         quotes = await response.json();
         this.latestQuotes = quotes;
-        this.currentJoke = this.latestQuotes.setup + ' ' + this.latestQuotes.punchline;
+        this.currentJoke = `${this.latestQuotes.setup}\n${this.latestQuotes.punchline}`;
       } catch (error) {
       }
     }

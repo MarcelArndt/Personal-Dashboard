@@ -10,14 +10,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 110px;
     color: white;
 }
 
 .text-block{
-    padding: 24px;
     width: 85%;
-    font-size: 24px;
+    font-size: clamp(18px,3vw,24px);
     text-align: center;
     vertical-align: middle;
 }
@@ -30,14 +28,15 @@
 }
 
 .animation-circle{
-	width: 60px;
-	height: 60px;
+	width: 85px;
+	height: 85px;
     aspect-ratio: 1 / 1;
 	border:solid 5px #ffffff;
 	border-radius: 50%;
-    border-left-color: transparent;
-	border-right-color: transparent;
-	border-bottom-color: transparent;
+    border-top-color: transparent;
+	border-left-color: transparent;
+    border-right-color: transparent;
+    border-right: 0px solid white;
 	-webkit-transition: all 0.5s ease-in;
     -webkit-animation-name: rotate; 
     -webkit-animation-duration: 1.0s; 
@@ -52,11 +51,30 @@
 }
 
 @keyframes rotate {
-    from {
-        transform: rotate(0deg);
+    0%{
+        border-bottom: 6px solid white;
+        transform: rotate(-80deg);
     }
-    to { 
-        transform: rotate(360deg);
+
+    47%{
+        transform: rotate(10deg);
+    }
+
+    57%{
+        border-bottom: 6px solid white;
+        border-right: 0px solid transparent;
+        transform: rotate(60deg);
+    }
+
+    75%{
+        border-right: 1px solid white;
+        border-bottom: 10px solid white;
+    }
+
+    100%{
+        border-right: 0px solid transparent;
+        border-bottom: 6px solid white;
+        transform: rotate(280deg);
     }
 }
 

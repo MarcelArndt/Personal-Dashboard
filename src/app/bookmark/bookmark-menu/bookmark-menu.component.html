@@ -1,0 +1,13 @@
+<div class="menu-wrapper">
+    <icon (click)="toggleMenu()" id="bookmark-menu" class="main-menu-icon">menu</icon>
+    <div class="menu-container">
+        <div class="animation-frame" [ngClass]="isShowMenu ? 'animation-open' : 'animation-close'">
+            <nav class="menu-nav">
+                <ul>
+                    <li (click)="toggleMenu()"><icon>add</icon>Add Item</li>
+                    <li (click)="toggleMenu()"><icon>delete</icon>Empty List</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>

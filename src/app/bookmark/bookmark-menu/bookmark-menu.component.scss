@@ -1,0 +1,117 @@
+.main-menu-wrapper{
+    width: 100%;
+}
+
+.main-menu-icon{
+    position: absolute;
+    right: 16px;
+    top: 0px;
+    z-index: 100;
+        font-size: 32px;
+        &:hover{
+            cursor: pointer;
+            scale: 1.1;
+        }
+}
+
+.menu-nav{
+    z-index: 99;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    opacity: 1;
+
+    ul{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    li:first-child{
+        border-radius: 8px 0px 0px 0px;
+    }
+
+    li:last-child{
+        border-radius: 0px 0px 8px 8px;
+        box-shadow: 0px 2px 1px rgba(122, 122, 122, 0.2);
+    }
+
+    li{
+        transform: translateY(-0px);
+        vertical-align: middle;
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        justify-content: end;
+        color: black;
+        width: 100%;
+        background-color: rgba(255,255,255,0.7);
+        border-bottom: 1px solid #EFEFEF;
+        border-top: 1px solid transparent;
+        user-select: none;
+        backdrop-filter: blur(3px);
+
+        icon{
+            font-size: 28px;
+            margin: 8px 16px 8px 24px;
+        }
+
+        &:hover{
+            background-color: #04A6FD;
+            color: white;
+            border-color: white;
+            border-top: 1px solid white;
+            cursor: pointer;
+        }
+    }
+}
+
+.menu-wrapper{
+    width: 100%;
+    height: 100%;
+}
+
+.menu-container{
+    position: relative;
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.animation-frame{
+    position: absolute;
+    top:42px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    max-width: 250px;
+    opacity: 0;
+    max-height: 0%;
+    scale: 1 0;
+}
+
+.animation-open{
+    opacity: 1;
+    max-height: 100%;
+    scale: 1 1;
+    transition: scale 0.5s ease-in-out, max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.animation-close{
+    opacity: 0;
+    max-height: 0%;
+    scale: 1 0;
+    transition: scale 0.5s ease-in-out, max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+
+@keyframes grow-up {
+    to{
+        opacity: 1;
+        max-height: 100%;
+        scale: 1 1;
+    }
+}

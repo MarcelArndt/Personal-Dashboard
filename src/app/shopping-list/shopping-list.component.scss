@@ -6,6 +6,15 @@
     background-color: #DB611A;
     border-radius: 12px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+}
+
+.content-buffer{
+    flex: 1;
+    background-color: #EFEFEF;
 }
 
 .headline{
@@ -34,7 +43,7 @@ background-color: #dedede;
 .content-wrapper{
     position: relative;
     width: 100%;
-    max-height: 370px;
+    height: 100%;
     overflow-y: scroll;
 }
 

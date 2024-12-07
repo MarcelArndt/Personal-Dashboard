@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IconComponent } from '../../share/icon/icon.component';
 import { ShoppinglistService } from '../service/shoppinglist.service';
 import { NavRoutersService } from '../service/nav-routers.service';
@@ -12,6 +12,9 @@ import { NavRoutersService } from '../service/nav-routers.service';
 })
 export class NoItemsComponent {
   constructor(public shoppingList:ShoppinglistService, public router: NavRoutersService  ){}
+
+  @Input() isDisableBackButton:boolean = false;
+
   closeWindows(){
     this.router.switchModus('overview')
   }

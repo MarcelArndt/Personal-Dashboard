@@ -33,7 +33,7 @@ export class DaytimeComponent {
   }
 
   checkDayTime(){
-      switch(Math.floor(this.currentTime!.getHours() / 5)){
+      switch(Math.floor(this.currentTime!.getHours() / 6)){
         case 0: this.dayTimeCounter = 0 ;break;   
         case 1: this.dayTimeCounter = 1 ;break;   
         case 2: this.dayTimeCounter = 2 ;break; 

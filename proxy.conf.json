@@ -1,0 +1,10 @@
+{
+    "/google-favicon": {
+      "target": "https://www.google.com/s2/favicons",
+      "changeOrigin": true,
+      "secure": true,
+      "pathRewrite": {
+        "^/google-favicon": ""
+      }
+    }
+  }

@@ -4,7 +4,7 @@
         <h4>There is no Item!</h4>
         <p>You have to add an item to your list, if you want to call this action.</p>
         <div class="flow-row">
-            <div (click)="closeWindows()" class="button-outline"><icon>arrow_back</icon>Back</div>
+            @if(!isDisableBackButton){<div (click)="closeWindows()" class="button-outline"><icon>arrow_back</icon>Back</div>}
             <div (click)="router.switchModus('addItem')" class="button-full"><icon>add</icon>Add Item</div>
         </div>
     </div>
