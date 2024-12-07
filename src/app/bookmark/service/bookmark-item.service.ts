@@ -13,7 +13,7 @@ export class BookmarkItemService {
   testImgUrl:string = '';
   
   genNewItem(obj:Item){
-    this.itemList![this.genIndex()] = {name: obj.name || '', link: obj.link || '', info:obj.info || '', img: obj.img || ''};
+    this.itemList![this.genIndex()] = {name: obj.name || '', link: obj.link || '', info:obj.info || '', img: this.getFavIconFromUrl(obj.link)};
   }
 
   genIndex():string{
@@ -33,7 +33,7 @@ export class BookmarkItemService {
 
   getFavIconFromUrl(url:string){
     const domain = new URL(url).hostname;
-    this.testImgUrl = `https://logo.clearbit.com/${domain}`;
+    return `https://logo.clearbit.com/${domain}`;
   }
 
 }
