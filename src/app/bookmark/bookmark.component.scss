@@ -48,6 +48,9 @@ app-bookmark-menu{
 }
 
 .item-holder-wrapper::-webkit-scrollbar-thumb{
+    display: flex;
+    justify-content: start;
+    align-items: start;
     background-color: #04A6FD;
     border-radius: 8px;
 }
@@ -59,9 +62,9 @@ app-bookmark-menu{
 }
 
 .item-holder-wrapper{
+   overflow-y: auto;
     margin-top: 16px;
     max-height: 104px;
-    overflow-y: scroll;
     width: 100%;
     display: flex;
     flex-wrap: wrap;

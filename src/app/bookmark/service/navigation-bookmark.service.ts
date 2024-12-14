@@ -7,7 +7,7 @@ export class NavigationBookmarkService {
 
   constructor() { }
 
-  path:string = '';
+  path:string = 'start';
   latestPath:string = '';
 
   goToPath(path:string = 'start'){

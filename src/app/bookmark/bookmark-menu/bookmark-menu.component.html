@@ -4,7 +4,7 @@
         <div class="animation-frame" [ngClass]="isShowMenu ? 'animation-open' : 'animation-close'">
             <nav class="menu-nav">
                 <ul>
-                    <li (click)="toggleMenu()"><icon>add</icon>Add Item</li>
+                    <li (click)="router.goToPath('addItem');toggleMenu()"><icon>add</icon>Add Item</li>
                     <li (click)="toggleMenu()"><icon>delete</icon>Empty List</li>
                 </ul>
             </nav>

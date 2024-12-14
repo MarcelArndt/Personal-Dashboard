@@ -1,13 +1,25 @@
 <div class="main-wrapper">
     <app-bookmark-menu></app-bookmark-menu>
         <div class="content-wrapper">
+
             <div class="headline">
                 <div class="flow-box"><icon>bookmark</icon><h1>Bibliothek</h1></div>
             </div>
+
             <div class="container-wrapper">
-                    <div class="item-holder-wrapper">
-                       <app-single-item></app-single-item>
-                    </div>
+            @switch(this.router.path){
+                @case('start'){<div class="item-holder-wrapper"> 
+                    <app-single-item></app-single-item> 
+                    <app-single-item></app-single-item> 
+                    <app-single-item></app-single-item> 
+                    <app-single-item></app-single-item> 
+                </div>}
+                @case('addItem'){
+                   <app-add-item></app-add-item>
+                }
+                @case('InfoPanel'){}
+            }
+
             </div>
         </div>
 </div>

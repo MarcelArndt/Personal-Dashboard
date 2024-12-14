@@ -17,7 +17,7 @@
                 }
             </div>
 
-            <input name="name" type="text" #nameInput="ngModel" required placeholder="Name of Item" minlength="3"[(ngModel)]="name">
+            <input name="name" type="text" #nameInput="ngModel" required placeholder="Name of Item" minlength="3" [(ngModel)]="name">
             <input name="amount" type="number" #amountInput="ngModel" required placeholder="Amount in numbers" [(ngModel)]="amount">
             <div class="flow-row">
                 <div (click)="closeWindows()" class="button-outline"><icon>arrow_back</icon>Back</div>

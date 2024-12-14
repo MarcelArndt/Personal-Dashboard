@@ -76,13 +76,13 @@
     position: absolute;
     right: 32px;
     top:24px;
+    &:hover{
+        cursor: pointer;
+        color: #87BE2D;
+        scale: (1.2);
+    }
 
     icon{
         font-size: 24px;
-
-        &:hover {
-            cursor: pointer;
-            transform: scale(1.5);
-        }
     }
 }

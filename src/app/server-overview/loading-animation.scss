@@ -1,0 +1,52 @@
+.animation-box{
+    //!! Customise your Loading-Circle here !!//
+    --circle-color: #87BE2D;
+    --boarder-thickness: 3px;
+    --box-size: 36px;
+    --animtion-duration: 1s;
+    ////////////////////////////////////////////
+    position: absolute;
+    top: calc((100% - var(--box-size) - 4px) / 2);
+    left: calc((100% - var(--box-size) + 16px) / 2);
+}
+
+.animation-circle{
+    z-index: 1;
+    width:var(--box-size);
+    height: var(--box-size);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    border: var(--boarder-thickness) solid transparent;
+    border-right: 0px solid var(--circle-color);
+    border-bottom: var(--boarder-thickness) solid var(--circle-color);
+    animation: rotate var(--animtion-duration) ease-out infinite;
+}
+
+.text-overlay{
+    font-size: 12px;
+    width: max-content;
+    text-wrap: nowrap;
+    z-index: 8;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 8px;
+    background-color: rgba(0,0,0,0.25);
+    backdrop-filter: blur(5px);
+    border-radius: 16px;
+    outline: 1px solid #1b3b00;
+}
+
+@keyframes rotate {
+    from{
+        border-radius: 50%;
+        border-bottom: var(--boarder-thickness) solid var(--circle-color);
+        transform: rotate(-50deg);
+    }
+    to{
+        border-right: 0px solid transparent;
+        transform: rotate(310deg);
+    }
+}

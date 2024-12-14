@@ -1,0 +1,20 @@
+.info-panel-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-wrapper{
+    margin-top: 16px;
+}
+
+.green{
+    background-color: #87BE2D;
+}
+
+.icon{
+    icon{
+        font-size: 44px;
+    }
+}

@@ -1,0 +1,27 @@
+<div class="head-area">
+    <div class="head-area">
+        <div class="icon">
+            <img src="./assets/component-minecraft-api/icon.svg">
+            <div class="online-status" [ngClass]="{'online': this.api.serverData.status}"></div>
+        </div>
+        <div class="edit"><icon (click)="this.api.switchModus()">edit_square</icon></div>
+    </div>
+    <div class="head-meta-data">
+        <p>{{this.api.serverData.ip}}</p>
+        <p class="status" [ngClass]="{'online-color': this.api.serverData.status}">{{this.api.serverData.status? 'Online' : 'Offline'}}</p>
+    </div>
+</div>
+
+<div class="bottom-area">
+    <p>{{this.api.serverData.name}}</p>
+    <p>Version: <span>{{this.api.serverData.version}}</span></p>
+    <p>Online: <span>{{this.api.serverData.onlinePlayer}} / {{this.api.serverData.maxPlayer}}</span></p>
+   
+</div>
+
+<div class="refresh">
+    <div class='animation-box'>
+        <div class="animation-circle"></div>
+    </div>
+    <span class="text-overlay">{{this.api.currentCooldown > 0? this.api.currentCooldown + ' sec.': 'Refreshing'}}</span>
+</div>

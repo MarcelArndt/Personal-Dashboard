@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../../share/icon/icon.component';
+import { NavigationBookmarkService } from '../service/navigation-bookmark.service';
 
 @Component({
   selector: 'app-bookmark-menu',
@@ -10,7 +11,7 @@ import { IconComponent } from '../../share/icon/icon.component';
   styleUrl: './bookmark-menu.component.scss'
 })
 export class BookmarkMenuComponent {
-  constructor(){}
+  constructor(public router:  NavigationBookmarkService){}
   targetMenuIconId:string = '#bookmark-menu'
   isShowMenu:boolean = false;
   
@@ -36,7 +37,4 @@ export class BookmarkMenuComponent {
       }
     });
   }
-  
-
-  
 }

@@ -44,15 +44,14 @@ export class DaytimeComponent {
   }
 
   choseCorrectItem(){
-      console.log(this.dayTimeObj[this.dayTimeCounter!].title);
       this.chosenData[0] = this.dayTimeObj[this.dayTimeCounter!].title;
       this.chosenData[1] = this.dayTimeObj[this.dayTimeCounter!].icon;
       this.chosenData[2] = this.dayName[this.currentTime!.getDay()];
   }
 
   getTime(){
-    const day = this.getNumberInFormat(this.currentTime!.getDay());
-    const month =  this.getNumberInFormat(this.currentTime!.getMonth());
+    const day = this.getNumberInFormat(this.currentTime!.getDate());
+    const month =  this.getNumberInFormat(this.currentTime!.getMonth() + 1);
     const year = this.getNumberInFormat(this.currentTime!.getFullYear());
     this.currentDate = `${day}.${month}.${year}`;
   }

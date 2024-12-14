@@ -1,0 +1,10 @@
+<div class="info-panel-wrapper">
+    <div class="icon"><icon>{{this.infoPanel.panelIcon}}</icon></div>
+    <div class="message">{{this.infoPanel.panelMessage}}</div>
+    <div class="button-wrapper">
+        <div class="button-full" (click)="onSubmit()" [ngClass]="infoPanel!.panelButton ? infoPanel.panelButton.class : '' ">
+            @if(this.infoPanel.panelButton?.icon){<icon>{{this.infoPanel.panelButton?.icon}}</icon>}
+            {{this.infoPanel.panelButton?.text}}
+        </div>
+    </div>
+</div>

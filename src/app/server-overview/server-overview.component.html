@@ -1,1 +1,15 @@
-<p>server-overview works!</p>
+<div class="server-wrapper">
+    <div class="server-content-wrapper">
+
+        @if(this.api.address && !this.api.isEditModus){
+            <app-server-overview-panel></app-server-overview-panel>
+        }
+        @if(!this.api.address && !this.api.isEditModus){
+            <app-info-panel></app-info-panel>
+        }
+        @if(this.api.isEditModus){
+            <app-edit-server></app-edit-server>
+        }
+        
+    </div>
+</div>

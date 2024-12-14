@@ -13,7 +13,7 @@ export class BookmarkItemService {
   testImgUrl:string = '';
   
   genNewItem(obj:Item){
-    this.itemList![this.genIndex()] = {name: obj.name || '', link: obj.link || '', info:obj.info || '', img: this.getFavIconFromUrl(obj.link)};
+    this.itemList![this.genIndex()] = {name: obj.name || '', link: obj.link || '', img: this.getFavIconFromUrl(obj.link)};
   }
 
   genIndex():string{
