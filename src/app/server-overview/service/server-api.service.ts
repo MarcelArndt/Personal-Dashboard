@@ -50,6 +50,16 @@ export class ServerApiService {
     this.serverData = item? JSON.parse(item) : await this.request();
   }
 
+  setUpNewIp(){
+    let backUpRequestCoolDown = this.requestCooldown;
+    this.resetData();
+    this.saveInLocalStorage();
+    this.latestRequest = 0;
+    this.requestCooldown = 0;
+    this.init();
+    this.requestCooldown = backUpRequestCoolDown;
+  }
+
   init(){
     if(!this.address) return
     this.loadFromLocalStorage();
@@ -57,7 +67,6 @@ export class ServerApiService {
       if(Date.now() - this.requestCooldown >= this.latestRequest!){
         this.setCooldown();
         this.request();
-        console.log('Refresh Data Request');
       } else {
         this.currentCooldown = Math.floor((Date.now() - this.latestRequest! - this.requestCooldown) / 1000 * -1);
         setTimeout(() => {this.init()}, 1000);

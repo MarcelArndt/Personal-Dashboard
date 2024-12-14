@@ -17,9 +17,8 @@ export class EditServerComponent {
   address:string = '';
 
   onSubmit(form:NgForm){
-    console.log(form.value.serverIp);
     this.api.changeAdress(form.value.serverIp);
     this.api.switchModus();
-    this.api.init();
+    this.api.setUpNewIp();
   }
 }

@@ -11,7 +11,6 @@ export class ServerInfoPanelService {
   panelIcon:string = '';
   panelButton?:panelButton;
 
-
   checkForData(){
     if(!this.api.address){
       this.panelMessage = 'No MC-Server registered!'
