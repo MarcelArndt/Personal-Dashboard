@@ -11,8 +11,6 @@ import { ChangePersonDeatilsComponent } from './change-person-deatils/change-per
 import { InfoPanelComponent } from './info-panel/info-panel.component';
 import { NavRoutersService } from './service/nav-routers.service';
 
-
-
 @Component({
   selector: 'app-shopping-list',
   standalone: true,
@@ -21,13 +19,13 @@ import { NavRoutersService } from './service/nav-routers.service';
   styleUrls: ['./shopping-list.component.scss', './shopping-list.component.scss']
 })
 export class ShoppingListComponent {
-  constructor( public shoppingList: ShoppinglistService, public router:  NavRoutersService){};
+  constructor(public shoppingList: ShoppinglistService, public router: NavRoutersService) { };
 
-  ngOnInit(){
+  ngOnInit() {
     this.shoppingList.init();
   }
 
-  get fillerArray():number[]{
+  get fillerArray(): number[] {
     const fillerCount = Math.max(0, 5 - this.shoppingList.shoppingListKeys.length);
     return Array(fillerCount).fill(0);
   }

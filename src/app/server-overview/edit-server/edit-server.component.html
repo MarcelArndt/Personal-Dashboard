@@ -1,17 +1,22 @@
 <div class="edit-wrapper">
+    <icon class="exit" (click)="this.api.switchModus()">close</icon>
+    <h2>Change Ip</h2>
     <div class="input">
-    <form  #serverIpForm="ngForm" (ngSubmit)="onSubmit(serverIpForm)">
-        <div class="errorBox">
-            @if(serverIp.touched && serverIp.errors?.['required']){
+        <form #serverIpForm="ngForm" (ngSubmit)="onSubmit(serverIpForm)">
+            <div class="errorBox">
+                @if(serverIp.touched && serverIp.errors?.['required']){
                 <span>Ip is required!</span>
-            } @else if (serverIp.errors?.['minlength'] && serverIp.touched) {
+                } @else if (serverIp.errors?.['minlength'] && serverIp.touched) {
                 <span>An Ip needs min. 10 characters!</span>
-            } @else {
-                <p>Enter your Server Ip!</p>
-            }
-        </div>
-        <input #serverIp="ngModel" name="serverIp" type="text" [(ngModel)]='address' minlength="10" [placeholder]="'1.23.45.678'" required>
-        <button [disabled]="serverIpForm.invalid" class="button-full green" ><icon>save</icon>Save Server</button>
-    </form>
+                } @else {
+                <p>Enter your Minecraft<br>Server Address!</p>
+                }
+            </div>
+            <input #serverIp="ngModel" name="serverIp" type="text" [(ngModel)]='address' minlength="10"
+                [placeholder]="'1.23.45.678'" required>
+            <button [disabled]="serverIpForm.invalid" class="button-full green">
+                <icon>save</icon>Save Server
+            </button>
+        </form>
     </div>
 </div>

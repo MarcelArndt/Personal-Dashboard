@@ -23,8 +23,6 @@ export class ServerOverviewComponent {
     } else {
       this.infoPanel.checkForData();
     }
-
   }
-
 
 }

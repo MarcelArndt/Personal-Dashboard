@@ -1,4 +1,4 @@
-.edit-wrapper{
+.edit-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -6,7 +6,7 @@
     text-align: center;
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,25 +14,25 @@ form{
     text-align: center;
 }
 
-input
-
-.green{
+input .green {
     background-color: #87BE2D !important;
 }
 
-.button-full{
+.button-full {
     background-color: #87BE2D !important;
-    &:hover{
+
+    &:hover {
         background-color: white !important;
         color: #87BE2D;
         border-color: #87BE2D;
     }
 }
 
-.button-full:disabled{
-   background-color: grey !important;
-   color: #585858;
-    &:hover{
+.button-full:disabled {
+    background-color: grey !important;
+    color: #585858;
+
+    &:hover {
         cursor: not-allowed;
         color: #585858;
         background-color: grey !important;
@@ -40,7 +40,7 @@ input
     }
 }
 
-input{
+input {
     padding: 0 16px 0 16px;
     border-radius: 16px;
     width: 80%;
@@ -55,50 +55,77 @@ input{
     background: none;
     margin: 8px 0px 8px 0px;
 
-    &:active, &:focus, &:hover{
+    &:active,
+    &:focus,
+    &:hover {
         border: 2px solid transparent;
         outline: none;
         background: none;
     }
 
-    &:hover{
+    &:hover {
         border-color: #87BE2D;
     }
 
-    &:active, &:focus{
+    &:active,
+    &:focus {
         border-color: #87BE2D;
     }
 
-    &::placeholder{
+    &::placeholder {
         color: #7d7d7d;
     }
 }
 
-.errorBox{
+.errorBox {
     width: 100%;
     height: 26px;
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: center;
     padding-left: 24px;
-    span{
+
+    span {
         position: relative;
         text-align: center;
         display: block;
-        color:white;
+        color: white;
 
-        &::before{
+        &::before {
             vertical-align: middle;
             content: 'error';
             position: absolute;
             font-family: 'Material Symbols Outlined';
             font-size: 26px;
-            color:white; 
+            color: white;
             left: -32px;
             top: -5px;
         }
     }
-    p{
+
+    p {
         margin-left: -24px;
+        margin-bottom: 16px;
     }
+}
+
+.exit {
+    font-size: 24px;
+    position: absolute;
+    right: 32px;
+    top: 24px;
+
+    &:hover {
+        cursor: pointer;
+        color: #87BE2D;
+        scale: (1.2);
+    }
+}
+
+h2 {
+    color: #87BE2D;
+    margin-block-start: 0px;
+    margin-block-end: 0em;
+    margin-bottom: 24px;
+    margin-top: 16px;
 }
