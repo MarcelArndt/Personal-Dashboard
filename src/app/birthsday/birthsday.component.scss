@@ -1,4 +1,4 @@
-.main-wrapper-card{
+.main-wrapper-card {
     color: white;
     width: 100%;
     height: 100%;
@@ -11,14 +11,20 @@
     justify-content: center;
     text-align: center;
     border-radius: 12px;
+    position: relative;
 }
 
-.name-container{
+app-birthday-navigation {
+    width: 100%;
+}
+
+
+.name-container {
     width: 100%;
     margin: 8px 0px;
 }
 
-.content{
+.content {
     width: 100%;
     display: flex;
     align-items: center;
@@ -26,24 +32,27 @@
     flex-direction: column;
 }
 
-hr{
+hr {
     width: 60%;
     border: 0px;
     border-top: 2px solid white;
     height: 1px;
 }
 
-.name-container{
+.name-container {
     width: 100%;
-    p{
+
+    p {
         color: #FFD400;
     }
 }
 
-.button-outline{
+.button-outline {
     margin-top: 18px;
-    &:hover{
-        color:  #871ADB;
-        border-color:  #871ADB;;
+
+    &:hover {
+        color: #871ADB;
+        border-color: #871ADB;
+        ;
     }
 }

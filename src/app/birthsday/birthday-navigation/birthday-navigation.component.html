@@ -1,0 +1,20 @@
+<div class="menu-wrapper">
+    <icon (click)="toggleMenu()" id="birthday-menu" class="main-menu-icon">menu</icon>
+    <div class="menu-container">
+        <div class="animation-frame" [ngClass]="isShowMenu ? 'animation-open' : 'animation-close'">
+            <nav class="menu-nav">
+                <ul>
+                    <li (click)="router.goToPath('addDate');toggleMenu()">
+                        <icon>add</icon>Add Date
+                    </li>
+                    <li (click)="router.goToPath('showAllDate');toggleMenu()">
+                        <icon>event_note</icon>Show All Dates
+                    </li>
+                    <li (click)="router.goToPath('deleteAll');toggleMenu()">
+                        <icon>delete</icon>Delete All
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
